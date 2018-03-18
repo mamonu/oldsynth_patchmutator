@@ -15,32 +15,30 @@ This was created by Ted Felix (for more info have a look here -> http://tedfelix
 the output looks a bit like this:
 Sample output:
 
-Filename: romfaves.syx
-Voice #: 1
-Name: MOOGBASS1
-Algorithm: 5
-Feedback: 1
-LFO
-  Wave: Square
-  Speed: 35
-  Delay: 0
-  Pitch Mod Depth: 0
-  AM Depth: 0
-  Sync: Off
-  Pitch Modulation Sensitivity: 0
-Oscillator Key Sync: On
-Pitch Envelope Generator
-  Rate 1: 0
-  Rate 2: 0
-  Rate 3: 0
-  Rate 4: 0
-  Level 1: 50
+-Filename: romfaves.syx
+-Voice #: 1
+-Name: MOOGBASS1
+-Algorithm: 5
+-Feedback: 1
+-LFO
+-  Wave: Square
+-  Speed: 35
+-  Delay: 0
+-  Pitch Mod Depth: 0
+-  AM Depth: 0
+-  Sync: Off
+-  Pitch Modulation Sensitivity: 0
+-Oscillator Key Sync: On
+-Pitch Envelope Generator
+-  Rate 1: 0
+-  Rate 2: 0
+-  Rate 3: 0
+-  Rate 4: 0
+-  Level 1: 50
 .
 .
 .
 etc...
-
-
 
 Once patches are in textual format with some minimal parsing the rest of the work will be done with
 * pandas   (data munging powerhouse)
