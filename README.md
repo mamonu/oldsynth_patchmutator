@@ -17,7 +17,7 @@ In order to not duplicate effort initially a compiled c++ program that is conver
 This was created by Ted Felix (for more info have a look here -> http://tedfelix.com/yamaha-dx7/index.html)
 
 the output looks a bit like this:
-Sample output:
+
 
     - Filename:romfaves.syx
     - Voice #: 1
@@ -46,7 +46,7 @@ etc...
 # Roland α-juno
 
 
-Function
+
 
      0 DCO Env. Mode [0=Normal, 1=Inverted, 2=Normal-Dynamic, 3=Inverted-Dynamic]
      1 VCF Env. Mode [0=Normal, 1=Inverted, 2=Normal-Dynamic, 3=Dynamic]
@@ -103,9 +103,10 @@ Once patches are in textual format with some minimal parsing the rest of the wor
     Mido     (MIDI Objects for Python)
 
 
-Information of the dx7 binary format is also included in the repo for reference
+Information of the dx7 / α-juno binary format is also included in the repo for reference
 
+There is something related on
 
 https://github.com/rogerallen/dxsyx
 
-i would like to use python however
+I would like to use the python ecosystem however for the GA part
