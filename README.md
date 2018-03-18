@@ -10,6 +10,8 @@ In this case the solution space is a DX7 synthesizer patch.
 By providing "good" examples of patches and mutating/evolve/modify them new patches that are probably good will be created.
 
 In order to not duplicate effort initially a c++ program is converting the dx7 binary patch  bank format to text will be used.
+This was created by Ted Felix (for more info have a look here -> http://tedfelix.com/yamaha-dx7/index.html)
+
 
 Once patches are in textual format the rest of the work will be done with
 * pandas   (data munging powerhouse)
@@ -17,4 +19,5 @@ Once patches are in textual format the rest of the work will be done with
 * Mido     (MIDI Objects for Python)
 
 
+Information of the dx7 binary format is also included in the repo for reference
 
