@@ -15,26 +15,26 @@ This was created by Ted Felix (for more info have a look here -> http://tedfelix
 the output looks a bit like this:
 Sample output:
 
-- Filename:romfaves.syx
-- Voice #: 1
-- Name: MOOGBASS1
-- Algorithm: 5
-- Feedback: 1
-- LFO
-- LFOWave: Square
-- LFOSpeed: 35
-- LFODelay: 0
-- LFOPitch Mod Depth: 0
-- LFOAM Depth: 0
-- LFOSync: Off
-- LFOPitch Modulation Sensitivity: 0
-- Oscillator Key Sync: On
-- Pitch Envelope Generator
-- PEGRate 1: 0
-- PEGRate 2: 0
-- PEGRate 3: 0
-- PEGRate 4: 0
-- PEGLevel 1: 50
+    - Filename:romfaves.syx
+    - Voice #: 1
+    - Name: MOOGBASS1
+    - Algorithm: 5
+    - Feedback: 1
+    - LFO
+    - LFOWave: Square
+    - LFOSpeed: 35
+    - LFODelay: 0
+    - LFOPitch Mod Depth: 0
+    - LFOAM Depth: 0
+    - LFOSync: Off
+    - LFOPitch Modulation Sensitivity: 0
+    - Oscillator Key Sync: On
+    - Pitch Envelope Generator
+    - PEGRate 1: 0
+    - PEGRate 2: 0
+    - PEGRate 3: 0
+    - PEGRate 4: 0
+    - PEGLevel 1: 50
 
 etc...
 
