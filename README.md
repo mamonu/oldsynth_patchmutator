@@ -10,7 +10,7 @@ In this case the solution space is a DX7/ a-juno synthesizer patch.
 By providing "good" examples of patches and mutating/evolve/modify them new patches that are probably good will be created.
 
 
-# DX7
+# Yamaha DX7
 
 
 In order to not duplicate effort initially a compiled c++ program that is converting the dx7 binary patch  bank format to text will be used.
@@ -43,7 +43,7 @@ Sample output:
 etc...
 
 
-# a-juno
+# Roland α-juno
 
 
 Function
@@ -89,7 +89,11 @@ Function
 
 
 
+# package dependencies / requirements
 
+A C++ compiler (gcc / g++). To install in Ubuntu just
+
+    sudo apt-get install gcc g++
 
 
 Once patches are in textual format with some minimal parsing the rest of the work will be done with
@@ -101,7 +105,6 @@ Once patches are in textual format with some minimal parsing the rest of the wor
 
 Information of the dx7 binary format is also included in the repo for reference
 
-another useful repo for similar work in C++ for DX7 is 
 
 https://github.com/rogerallen/dxsyx
 
