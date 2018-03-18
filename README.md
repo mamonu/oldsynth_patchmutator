@@ -39,6 +39,7 @@ Sample output:
 etc...
 
 Once patches are in textual format with some minimal parsing the rest of the work will be done with
+
     pandas   (data munging powerhouse)
     DEAP     (a novel evolutionary computation framework)
     Mido     (MIDI Objects for Python)
