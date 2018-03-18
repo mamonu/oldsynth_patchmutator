@@ -46,7 +46,9 @@ Once patches are in textual format with some minimal parsing the rest of the wor
 
 
 Information of the dx7 binary format is also included in the repo for reference
+
 another useful repo for similar work is 
+
 https://github.com/rogerallen/dxsyx
 
 i would like to use python however
