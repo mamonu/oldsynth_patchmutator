@@ -1,4 +1,4 @@
-# dx7patchmutator
+# oldsynth_patchmutator
     a utility to read a yahaha dx7 patch file and mutate it using GP (Genetic Programming)
 
 
@@ -47,7 +47,7 @@ Once patches are in textual format with some minimal parsing the rest of the wor
 
 Information of the dx7 binary format is also included in the repo for reference
 
-another useful repo for similar work is 
+another useful repo for similar work in C++ for DX7 is 
 
 https://github.com/rogerallen/dxsyx
 
