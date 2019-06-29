@@ -1,0 +1,176 @@
+
+DX/TXconvert currently can convert and export TO the following data/file formats:
+==============================================================================
+# .dx7: (DXconvert)
+    Raw headerless DX7 Mk1 data. 128 bytes per patch, 32 patches per bank,
+    with --nosplit: any number of patches can be stored in one bank.
+    For DX7II, TX802, and TX7 better use .syx
+
+# .dxx: (TXconvert)
+	Raw headerless DX21/TX81z (etc) data. 128 bytes per patch, 32 patches per bank,
+    with --nosplit: any number of patches can be stored in one bank
+
+# .fb1 (TXconvert)
+    compressed raw headerless FB01 data. 64 bytes per patch, 8bits per byte.
+    (unlike syx format, which uses 128 x 4bits/byte) 
+
+# .opm (TXconvert)
+    this is a ASCII file format that is imported/exported by VOPM, a free 4-operator 
+    FM VSTi plugin that simulates a Yamaha OPM chip (OPL 2612) 
+    
+# .mid, .midi:
+	Format 0 Midi File (1 track) with the same data as the .syx format 
+
+# .txt:
+	ASCII textfile with a list of parameter names and values 
+	or: ASCII textfile with a list of all voicenames.
+
+# SysEx data:
+    Any other file extension can be used for pure SysEx data.
+    SysEx (System Exclusive) files contain the exact data that are sent and 
+    received from/to the synthesizer's MIDI ports. 
+    Recommended (but not required) extension is ".syx".
+
+
+DX/TXconvert currently can import and convert data FROM the following file formats:
+===================================================================================
+    # DX7 and DX21/TX81Z(etc) raw voicedata:
+        various sizes (not only 4096!) and file extensions (if any). 
+    
+	# Pure (or not so pure) SysEx dump formats, 
+	# Standard MIDI file format containing SysEx data: 
+		- DX7/DX7II packed 32-voice data (VMEM, AMEM+VMEM)
+		- DX7/DX7II single-voice edit buffer data (VCED, ACED+VCED)
+        - Grey Matter Response E! single or 32 voice data (VMEM)
+		- TX7 32 performance data
+		- TX7 1 performance data
+		- FB01 voicebank data
+		- FB01 instrument voice data
+		- DX21, TX81Z, V50, etc. voicebank data
+		- DX21, TX81Z, V50, etc. single-voice edit buffer data
+        - PSS-480/580/680/780 voicedata (experimental)
+        - DX9 packed 20-voice data (+12 unused voices)
+        - DX9 single-voice data
+
+	Size: variable
+	File extension: various, or none. DXconvert uses ".syx" for export.
+	".mid" or ".midi" is normally used for MIDI files.
+
+	# Dr.T TX7 files:
+	ext=".tx7" size=8192
+    
+    # Steinberg TX7:
+    ext=".snd" size=8192
+    
+    # XSyn TX7 formaat:
+    ext=".bnk" size=8192
+
+    # GenPatch TX7
+    ext=".TX7" size=4172
+
+	# Yamaha DX200 editor
+	ext =".dx2" size=326454
+
+	# Yamaha DX Simulator DXC
+	ext=".dxc" size=18004
+
+	# Voyetra Patchmaster / SIDEMAN DX/TX/DX7II
+    ext=".B68" size=9816
+
+    # Voyetra Patchmaster TX81Z
+    ext=".B15" size=10755
+
+    # Voyetra Patchmaster FB01
+    ext=".B16" size=20837
+		
+	# DX7IIFD internal floppy data
+	ext=".I01"~".I32" size=16384
+
+    # V50 internal floppy data
+    ext=".I01"~".I32" size=26624
+    ext=".C01"~".C32" size=32768
+
+    # X-OR V50
+    ext=".V5B" size=24576
+
+    # Dr.T / Fourop Deluxe
+    ext=".DXX" size=4096
+
+    # X-OR TX81Z
+    ext=".TXZ" size=6538
+
+    # Synthworks 4OP
+    ext=".BNK" size=4032
+    ext=".SND" size=126
+
+    # Caged Artist FB01
+    ext=".FB1" size=8768
+
+    # Dr.T FB01
+    ext=".FB1" size=3072
+
+    # Synthworks FB01
+    ext=".FBD" size=2450
+
+	# DX7 Steinberg Synthworks/Satellit SND
+	ext=".snd" size=5216
+
+	# FM-Alive DX Manager DXM
+	ext=".dxm" size=variable
+
+	# Soundlib SLB
+	ext=".slb" size=variable
+
+	# Opcode GALAXY Yamaha DX7
+	size=4170
+
+    # geminisolstice DX7, TX7, TX816 "Michael Jackson" collection.
+    size=variable
+
+	# C-Lab X-ALyzer XAL
+	ext=".xal" size=variable
+	
+	# Amiga DXEditor093
+
+	# Marc Bareille SynLib DX-TX DXL
+	ext=".dxl" size=4128320
+
+	# Emagic SoundDiver DX7(II) TX81Z
+	ext=".lib" size=variable
+
+    # C-Lab PolyFrame
+    ext=".pl" size=variable
+
+    # M.Gregory's TX81Z Programmer
+    ext=".tx8" size=variable
+
+    # ZIP archives containing files with any of the above file formats
+    ext=".zip" size=variable
+
+    # Atari GenPatch TX7
+
+    # Cassette Interface dumps 
+    TX7, TX81Z, DX21, DX27, DX100, DX9 patches dumped from cassette-interface
+    ext=".wav" (requires wav2cas utility)
+    ext=".cas"
+    size=variable
+    -> Please read README-wav2cas.txt
+
+    # VOPM patches
+    ext=".opm" size=variable
+
+    # PSS-480/580/680/780
+    # Atari ST PSSED 
+    ext=".LIB" ext=".SET"
+    
+    # CX5M 
+    ext=".VOG" size=3079 or 3111
+
+    # Tim Thompson Glib TX81Z/DX100 editor
+    ext=".tx8', ".dx1" size=4097
+
+    # Tim Thompson Glib DX7s
+    ext=".d7s" size=5217
+
+    # Grey Matter DX7 E! ROM
+    ext=".bin" size=32768

@@ -1,0 +1,312 @@
+DXconvert HISTORY
+-----------------
+2.1.6 (29140425)
+- minor bugfixes
+- started work on Korg 707/DS8 import.
+  (currently only patchnames are converted)
+- fixed really bad --sort bug 
+- double destroy() in GUI fixed
+- AudioGrill TX81Z/DX11 Voice Archive import
+- Tim Thompson Glib TX81Z DX100 DX7 import
+- import Grey Matter DX7 E! 32K ROM .bin file
+- import Grey Matter DX7 E! RAM SysEx
+- added some more .req files
+- code cleanup
+- improved bad patch detection
+
+2.1.5 (20140222)
+- import Atari PSSED pss480-780 library files with voicenames
+- improved parameter txt print
+- dx7 fixed frequency out-of-range bugfix. 
+- --copy --swap commandline options: 
+    copy or swap patches between locations in a bank
+- CX5M .vog import (work in progress)
+- Sounddiver TX81Z .lib import
+- V50/YS/TQ cartridge MCD32 V50 file (.C01 ~ .C32) import
+- bugfix: --yamaha=tq5|ys200|v50 bank write
+
+2.1.4 (20131114)
+- support for cassette interface data TX7, DX11, TX81Z, DX21/27/100, DX9
+    wav, cas (requires wav2cas from MSX castools by Vincent van Dam)
+    txt (output from tape-read perl script by M. Ward)
+- minor bug fixes
+- GenPatch Atari TX7 bank import
+- some Grey Matter Response E! import
+- --sort2 option for case-sensitive sorting (--sort is now case-insensitive)
+- DX9 SysEx convert to other 4-operator synths using TXconvert
+- bugfix dx7<->fourop AMD conversion
+- improved --select RANGE option. RANGE can now be something like "2, 3-5, 11-32"
+- fixed raw VCED import bug in dxconvert
+- added README.wav2cas.txt
+- fixed bug with .FB1 and .OPM uppercase output filename extension.
+- --find accepts multiple keys like "string, piano"
+
+2.1.3 (20130404)
+- VOPM (*.opm) file export (TXconvert)
+- improved opm import.  
+- fixed txconvert-gui output file selector for DX/TX/FB01/VOPM etc.
+- DX7 out-of-range level conversion management DX7/TX7/DX7II
+
+2.1.2 (20130206)
+Renata Dokmanovic says goodbye to the Yahoo YamahaDX forum.
+She has helped many DX users and has had an important role during the development
+of DX/TXconvert. This release is dedicated to her:
+- -R or --Renata commandline option is a shortcut for --random=0
+- 3rd party news: the official python-rtmidi-0.3.1a (or newer) downloads from
+    http://pypi.python.org/pypi/python-rtmidi/
+  should now work nicely with DX/TXconvert, also on Windows.
+- MIDI in the GUI version gives mysterious problems, if run by pythonw.exe on Windows.
+  They are now named dxconvert-gui.py and txconvert-gui.py again. (reported by Paul Deco)
+- bugfix: unassigned variable "channel" when no channel selected in GUI.
+
+2.1.1 (20130122)
+- use extended/undocumented FB01 transpose range to compensate octave shifts after conversions
+- less octave transpositions after converting from TX81Z (etc.) to DX21/27/100
+- fixed a bug when rtmidi is not available. (reported and fixed by W. Cruz)
+
+2.1.0 (201212120)
+- new: Export to FB01 (TXconvert)
+- improved: TX81Z > DX21 operator frequency conversion
+- bugfix: FB01 > DX7 conversion OP1 level=0, not 99 
+- improved: AMD parameter conversion dx7/4op/fb01
+- bugfix: MIDI output in txconvert-gui.py
+- improved: MIDI output reliability
+- fixed deprecated --version argument
+- fixed bug in 4-op parameter print
+- improved: MIDI configuration dialog initialized with values from dxtxmidi.cfg,
+  or with values from environment variables 'MID_IN' and 'MID_OUT'
+
+2.0.12 (20121019)
+- Some code cleanup
+
+2.0.11 (20121011)
+- Fixed really bad bug in txconvert
+- Implemented Renata Dokmanovic randomizing algorithm (thanks R.!)
+  (Usage: --random with value 0)
+
+2.0.10 (20121007)
+- order of excution of options changed:
+    --select --find --random --nodupes --sort
+  
+2.0.9 (20121003)
+- fix handling of banks with only INITVOICE patches.
+2.0.8 (20120918)
+- bump version number to 2.0.8 for official release
+- add 100 ms pause between SysEx MIDI dump blocks. 
+- fixed bad typo in midi_help.py
+- some new .req files
+
+2.0.7 (20120830)
+2.0.7 (20120830)
+- pygame.midi / pyportmidi was giving me headaches. 
+  DX/TXconvert now uses python-rtmidi for the MIDI functions.
+  Download it here:    
+    http://pypi.python.org/pypi/python-rtmidi/
+    http://chrisarndt.de/projects/python-rtmidi/download/
+- Intelligent recalculation of TX81Z (and newer) operator frequencies 
+  when converting for use with DX100/27/21.
+- Fixed frequencies can be converted to ratios for use with DX100/27/21. 
+  Approximation is based on middle E.
+- Various ways to select MIDI I/O ports:
+  MID_IN and MID_OUT can be set using environment variables.
+  MID_IN and MID_OUT can be set using commandline options 
+  MID_IN and MID_OUT can be set in the GUI version
+  MID_IN and MID_OUT are saved in a file named "dxtxmidi.cfg"
+  this will all override pre-defined strings in DXconvert/dxcommon.py
+- fixed broken --select functions
+- MIDI configuration GUI.
+  
+2.0.6 (20120817)
+- Optimized input file format detection. 
+- Randomizer default value=0. Fixes a crash that happens with Python 3
+- Fixed bug in parameter list printing for 4-op synths.
+- MIDI support fixed for Python3, but only partially working on Windows  
+
+2.0.5 (20120717)
+- C-Lab PolyFrame fileformat  
+- Warning when too many files in a zipfile.
+- MIDI I/O support (experimental, requires pygame or pyportmidi)
+- fixed crash caused by some of the many available OPM files.
+- fixed bad patch re-naming when converting OPM files with short file names.
+- No SysEx header re-channelizing when --channel value is 0 or None.
+ 
+2.0.4 (20120707)
+- Prevent crash with bad dumps where bytes are missing in the middle of
+  the dump, but SysEx header data look correct.
+- minor code cleanup
+
+2.0.3 (20120705)
+- Extract and read files directly from Zip files.
+- Prevent TXconvert trying to read some DX7 fileformats, 
+  (for example raw .dx7 files)
+
+2.0.2 (20120703)
+- minor bugfixes and code cleanup
+- handle "init", "no Name" and "Null" patches in .opm files same as "INIT VOICE" patches
+- disable the MAXFILESIZE limitation by default. 
+  (Edit DXconvert/dxcommon.py to change this behaviour)
+- Rename VOPM voicenames to give something more descriptive than "Instrument" (2612org collection)
+- Reduce chance of producing garbage from unknown and/or incompatible file formats
+- bumped version number from 2.0.1 to 2.0.2
+
+2.0.0 (20120624)
+- fixed a typo in dx200.py
+- fixed a bug in PSS conversion (PSS conversion still experimental and untested)
+- fixed several bugs in automatic path/filename construction for --split option.
+- code cleanup fb01 conversions
+- fix corrupted, out-of-range fb01 values before conversion
+- fixed a bug in FB01 AMD conversion
+- FB01 PMD assignment conversion bug fixed. 
+- larger help window.
+- Read m.gregory's TX81Z programmer .tx8 files
+- Read Dr.T FB01 .FB1 files
+- Read Synthworks FB01 .FBD files
+- Read Synthworks 4OP .BNK and .SND files
+- Read Synthworks DX7/TX7 .SND files
+-
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  !!! MOST IMPORTANT NEWS:                                 !!!
+  !!! FIRST RELEASE OF TXConvert FOR 4-OP FM YAMAHA SYNTHS !!!
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+1.2.2 (20120520)
+- bugfix in randomizer; keep randomized voices in tune
+
+1.2.1 (20120512)
+- Disable --dx72 and --tx7 switches when outfile format is *.dx7 
+- #!/usr/bin/python replaced by #!/usr/bin/env python
+
+1.2.0 (20120427)
+- GUI and CLI support the same options 
+- GUI redesigned
+- patch randomizer
+- search and select patches by name 
+- when output filename extension is other than .dx7, .txt, .mid, or .midi,
+  SysEx output format is used by default.
+
+1.1.21 (20120414)
+- Improved support for DXM (FM-Alive DXmanager) file formats
+
+1.1.20 (20120206)
+- read/convert .opm files from the VOPM virtual FM synth VST
+- mid2syx.py and syx2mid.py don't require DXconvert anymore
+
+1.1.19 (20120127)
+- optional conversion of BC, FC1, FC2 controller data
+- optional mapping of BC to AT controller data
+- removed USE_BC, USE_FC1, USE_FC2 variables in fourop.py. 
+  This is now better supported using commandline options.
+
+1.1.18 (20120101)
+- Changed name of module directory from dxconvert to DXconvert
+- Sort function moves all "INIT VOICE" patches to the end of the bank
+- Small changes in documentation 
+
+1.1.17 (20111201)
+- Changed out-of-range parameter value correction for DX7
+- Fixed output path bug
+
+1.1.16 (20111121)
+- PSS import: patchnames based on input file name
+- PSS import: fix incorrect "File is too small" warning.
+- PSS import: Level Scaling conversion attempt
+
+1.1.15 (20111107)
+- improved FB01 PMD/PMS conversion
+- work on FB01 level scaling conversion: 
+    Unfinished, but improved.
+- Experimental PSS-480/580/680 patch import :-)
+- bugfix: unitialized channel variable. 
+
+1.1.14 (20111023)
+- Improved FB01 conversion 
+- 4-op envelope D2R conversion bugfix
+- More fileformats recognized:
+    Voyetra Patchmaster DX7, TX81Z, FB01
+    Caged Artist FB01
+    X-OR V50
+    X-OR TX81Z
+    V50 internal disk SYN (.Ixx) format
+    Transform XSyn TX7
+- Wildcard expansion on Windows now works as on Linux. (commandline)
+- consistant indentation in mid2syx.py, needed for a future Python 3 port.
+- New commandline option: --split saves every single patch in a separate file.
+- Updated EXAMPLES.txt file
+
+1.1.12 (20111012)
+- Prevent out-of-range errors when importing corrupted 4-op data
+- fixed import of 4-op PBR and EGshift parameters.
+- fixed potential zero division error
+- optional checksum check before import (syx and mid only)
+- be sure patches with name "INIT VOICE" are really initialized.
+- initialize patches with empty names.
+
+1.1.10 (20111007)
+- separated GUI version (dxconvert-gui.py) 
+  and CLI version (dxconvert.py).
+- removed unreliable 4-op recognition code 
+
+1.1.9 (20111002)
+- safer file handling using the "with" statement
+
+1.1.8 (20110929)
+- Replaced file recognition method introduced in v1.1.7 by
+  a smarter method that covers more file sizes and formats
+  with less code and less error risk.
+- Minor changes in mid2syx.py and syx2mid.py
+
+1.1.7 (20110923)
+- Opcode Galaxy 6146 bytes TX7 file format
+- Opcode Galaxy 49184 or 49154 bytes TX816 file format
+
+1.1.5 (20110922)
+- "--offset=x" commandline option: ignore specified number of header 
+  bytes when loading a file. Only needed for unsupported file
+  formats. Please report to me if you find such files.
+- When writing 10+ output files in one conversion, padding with "0" 
+  is used for numbering.  
+  For example outfile(001).syx ... outfile(999).syx 
+
+1.1.4 (20110817)
+- 4-op patch import: single editvoice recognized and converted.
+- 4-op patch import from JSynthlib TX81Z/DX21 files
+
+1.1.3 (20110724) 
+- 4-op FM patch import and conversion to 6-op (DX21, TX81Z, V50, etc.) !
+- Improved 6op vs 4op file recognition. 
+- Use Bank Select Headers for 64-patch DX7II or 128-patch DX200 SysEx banks.
+- Code cleanup and bugfixes
+- EXAMPLES.txt file with commandline usage examples.
+
+1.1.2 (20110519)
+- Reads Emagic Sounddiver files 
+- Code cleanup, more consistent indentation
+- Written for Python 2.7, but prepared for Python 3.2 
+- Ignore DX7II flag if outfile format is *.dx7 (PEG range!)
+
+1.1.1 (20110428)
+- fixed a bug with uninitialized nodupes2
+- GUI fixes: info text line updated during file conversions
+
+1.1.0 (20110425):
+	Method 1. remove duplicates if ALL parameters are identical
+	Method 2. remove duplicates also if VOICENAME is different,
+	but all other parameters are identical.
+
+1.1 (20110411):
+- commandline interface greatly improved using the argparse standard library
+- batch processing: multiple files and wildcards allowed as input
+- new option: sort patches by name
+- new option: remove duplicates
+- small bugfixes
+
+1.02 (20110330): 
+- fix: midifile export was incorrect when multiple banks in one file
+- Minor code optimisations
+- Add CHANGES.txt file to distribution
+- syx2mid.py and mid2syx.py: optional automatic output file naming.
+
+1.0: (20110327):
+- First public release
+
